@@ -100,7 +100,15 @@ export class Iwe7DesignDirective implements OnChanges {
     this.setStyle((<any>instance).ele.nativeElement);
   }
 
-  private setClass(ele: any) {}
+  private setClass(ele: any) {
+    _.map(this.design.class, (s, key) => {
+      if (s) {
+        this.renderer2.addClass(ele, "" + key);
+      } else {
+        this.renderer2.removeClass(ele, "" + key);
+      }
+    });
+  }
 
   private setStyle(ele: any) {
     _.map(this.design.style, (s, key) => {

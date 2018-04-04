@@ -60,8 +60,8 @@ let design: Iwe7DesignConfig = {
     title: "我的组件",
     name: "my-comp",
     show: true,
-    setting: null,
-    preview: null,
+    setting: MyCompSetting,
+    preview: MyComp,
     props: {
       name: "my-comp",
       style: {},

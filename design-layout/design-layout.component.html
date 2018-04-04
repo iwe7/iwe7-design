@@ -34,7 +34,7 @@
           <div class="col iphone-tools">
             <ng-container *ngFor="let com of lib.components">
               <ng-container *ngFor="let c of com | map">
-                <button *ngIf="c.item.show" (click)="addComponent(c)" class="btn btn-outline-primary">{{c.item.title}}</button>
+                <span class="btn btn-outline-primary btn-sm" *ngIf="c.item.show" (click)="addComponent(c)">{{c.item.title}}</span>
               </ng-container>
             </ng-container>
           </div>
