@@ -43,6 +43,7 @@ export class AddonsPage implements OnInit {
       unit: '年'
     }
   ];
+  config: any = {};
   constructor() {}
 
   ngOnInit() {}

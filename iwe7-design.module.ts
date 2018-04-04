@@ -23,12 +23,22 @@ import { RoutingPage } from "./pages/routing/routing.component";
 import { DatabasePage } from "./pages/database/database.component";
 import { HomePage } from "./pages/home/home.component";
 
+import { SwiperModule } from "ngx-swiper-wrapper";
+import { SWIPER_CONFIG } from "ngx-swiper-wrapper";
+import { SwiperConfigInterface } from "ngx-swiper-wrapper";
+
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: "horizontal",
+  slidesPerView: "auto"
+};
+
 @NgModule({
   imports: [
     CommonModule,
     UnderscoreModule,
     FormsModule,
     ReactiveFormsModule,
+    SwiperModule,
     RouterModule.forChild([
       {
         path: "",
@@ -80,7 +90,13 @@ import { HomePage } from "./pages/home/home.component";
     HomePage
   ],
   exports: [Iwe7DesignDirective, DesignLayoutComponent, RouterModule],
-  entryComponents: [...emtryComponents]
+  entryComponents: [...emtryComponents],
+  providers: [
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
+    }
+  ]
 })
 export class Iwe7DesignModule {
   public static forRoot(comps: any): ModuleWithProviders {
