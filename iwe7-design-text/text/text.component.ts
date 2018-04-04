@@ -37,6 +37,7 @@ export class TextComponent implements OnInit {
   }
 
   update() {
+    console.log(this.props);
     this._html = this.props.text;
   }
 }

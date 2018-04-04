@@ -92,7 +92,6 @@ export class Iwe7DesignDirective implements OnChanges {
       (<any>instance).props.id = this.lib.uuid;
       (<any>instance).props = instanceMap.get(this.lib.uuid).props;
       (<any>instance).instance = instanceMap.get(this.lib.uuid);
-
     } else {
       this.lib.uuid = (<any>instance).props.id = new Date().getTime();
       instanceMap.set(this.lib.uuid, instance);
