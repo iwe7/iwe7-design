@@ -15,15 +15,19 @@ import { TextSettingComponent } from "./iwe7-design-text/text-setting/text-setti
 import { PageComponent } from "./iwe7-design-page/page/page.component";
 import { PageSettingComponent } from "./iwe7-design-page/page-setting/page-setting.component";
 
+import { ButtonComponent } from "./iwe7-design-button/button/button.component";
+import { ButtonSettingComponent } from "./iwe7-design-button/button-setting/button-setting.component";
 
-import { ButtonComponent } from './iwe7-design-button/button/button.component';
-import { ButtonSettingComponent } from './iwe7-design-button/button-setting/button-setting.component';
-
+import { CheckboxGroupComponent } from "./checkbox-group/checkbox-group/checkbox-group.component";
+import { CheckboxGroupSettingComponent } from "./checkbox-group/checkbox-group-setting/checkbox-group-setting.component";
+import { CheckboxComponent } from "./checkbox/checkbox/checkbox.component";
+import { CheckboxSettingComponent } from "./checkbox/checkbox-setting/checkbox-setting.component";
 
 import { component as TextCom } from "./iwe7-design-text/public_api";
 import { component as PageCom } from "./iwe7-design-page/public_api";
 import { component as ButtonCom } from "./iwe7-design-button/public_api";
-
+import { component as CheckboxCom } from "./checkbox/public_api";
+import { component as CheckboxGroupCom } from "./checkbox-group/public_api";
 
 export const emtryComponents = [
   TextComponent,
@@ -31,7 +35,11 @@ export const emtryComponents = [
   PageComponent,
   PageSettingComponent,
   ButtonComponent,
-  ButtonSettingComponent
+  ButtonSettingComponent,
+  CheckboxGroupComponent,
+  CheckboxGroupSettingComponent,
+  CheckboxComponent,
+  CheckboxSettingComponent
 ];
 
 @NgModule({
@@ -41,7 +49,11 @@ export const emtryComponents = [
     DesignLayoutComponent,
     ...emtryComponents,
     ButtonComponent,
-    ButtonSettingComponent
+    ButtonSettingComponent,
+    CheckboxGroupComponent,
+    CheckboxGroupSettingComponent,
+    CheckboxComponent,
+    CheckboxSettingComponent
   ],
   exports: [Iwe7DesignDirective, DesignLayoutComponent],
   entryComponents: [...emtryComponents]
@@ -59,7 +71,9 @@ export class Iwe7DesignModule {
             {
               page: PageCom,
               text: TextCom,
-              button: ButtonCom
+              button: ButtonCom,
+              [`checkbox-group`]: CheckboxGroupCom,
+              checkbox: CheckboxCom
             }
           ],
           multi: true
