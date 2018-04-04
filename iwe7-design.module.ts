@@ -36,7 +36,7 @@ export const emtryComponents = [
   entryComponents: [...emtryComponents]
 })
 export class Iwe7DesignModule {
-  public static forRoot(): ModuleWithProviders {
+  public static forRoot(comps: any): ModuleWithProviders {
     return {
       ngModule: Iwe7DesignModule,
       providers: [
@@ -50,6 +50,11 @@ export class Iwe7DesignModule {
               text: TextCom
             }
           ],
+          multi: true
+        },
+        {
+          provide: DESIGN_LIBRARYS,
+          useValue: comps,
           multi: true
         }
       ]

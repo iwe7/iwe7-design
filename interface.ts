@@ -19,3 +19,20 @@ export class Iwe7DesignSettingComponent {
   instance: any;
   constructor(public ele: ElementRef) {}
 }
+
+export interface Iwe7Design {
+  title: string;
+  name: string;
+  show: true;
+  setting: any;
+  preview: any;
+  props: {
+    name: string;
+    style: any;
+    class: any;
+  };
+}
+
+export interface Iwe7DesignConfig {
+  [key: string]: Iwe7Design;
+}
