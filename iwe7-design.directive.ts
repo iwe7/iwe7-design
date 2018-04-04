@@ -45,7 +45,6 @@ export class Iwe7DesignDirective implements OnChanges {
 
   ngOnInit() {
     if (this.designDebug) {
-      console.log(this);
     }
   }
 
@@ -81,7 +80,6 @@ export class Iwe7DesignDirective implements OnChanges {
     const { instance } = componentRef;
     // 新建一个实例
     (<any>instance).props = this.design;
-
     if (this.lib.uuid) {
       (<any>instance).props.id = this.lib.uuid;
       (<any>instance).props = instanceMap.get(this.lib.uuid).props;
@@ -91,9 +89,8 @@ export class Iwe7DesignDirective implements OnChanges {
       instanceMap.set(this.lib.uuid, instance);
     }
     if (!this.designSetting) {
-      this.setClass((<any>instance).ele.nativeElement);
+      (<any>instance).setClass && (<any>instance).setClass();
       this.setStyle((<any>instance).ele.nativeElement);
-
       if (this.designDrag) {
         this.setDrag(instance);
       }
@@ -101,16 +98,6 @@ export class Iwe7DesignDirective implements OnChanges {
         this.setDrop(instance);
       }
     }
-  }
-
-  private setClass(ele: any) {
-    _.map(this.design.class, (s, key) => {
-      if (s) {
-        this.renderer2.addClass(ele, "" + key);
-      } else {
-        this.renderer2.removeClass(ele, "" + key);
-      }
-    });
   }
 
   private setStyle(ele: any) {

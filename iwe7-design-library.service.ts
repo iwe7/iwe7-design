@@ -11,7 +11,6 @@ export class Iwe7DesignLibraryService {
   uuid: any;
   constructor(@Inject(DESIGN_LIBRARYS) components: any) {
     this.components = _.flatten(components);
-    console.log(this.components);
   }
 
   get(key: string) {

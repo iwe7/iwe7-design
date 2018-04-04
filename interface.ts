@@ -3,21 +3,48 @@ import {
   OnInit,
   Input,
   HostBinding,
-  ElementRef
+  ElementRef,
+  Renderer2
 } from "@angular/core";
+import * as _ from "underscore";
 
-export class Iwe7DesignComponent {
+export class Iwe7DesignBase {
   @Input() props: any;
+  constructor(public ele: ElementRef, public render: Renderer2) {}
+  public setClass() {
+    let ele = this.ele.nativeElement;
+    _.map(this.props.class, (s, key) => {
+      if (this.isTrue(s)) {
+        this.render.addClass(ele, "" + key);
+      } else {
+        this.render.removeClass(ele, "" + key);
+      }
+    });
+  }
+
+  public isTrue(val: any) {
+    if (typeof val === "string") {
+      val = val.toLowerCase().trim();
+      return val === "true" || val === "on" || val === "";
+    }
+    return !!val;
+  }
+}
+
+export class Iwe7DesignComponent extends Iwe7DesignBase {
   @HostBinding("attr.id") _id: string;
-  constructor(public ele: ElementRef) {}
+  constructor(ele: ElementRef, render: Renderer2) {
+    super(ele, render);
+  }
   // 更新数据
   update() {}
 }
 
-export class Iwe7DesignSettingComponent {
-  @Input() props: any;
+export class Iwe7DesignSettingComponent extends Iwe7DesignBase {
   instance: any;
-  constructor(public ele: ElementRef) {}
+  constructor(public ele: ElementRef, public render: Renderer2) {
+    super(ele, render);
+  }
 }
 
 export interface Iwe7Design {

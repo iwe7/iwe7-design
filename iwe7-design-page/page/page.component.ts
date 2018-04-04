@@ -7,12 +7,11 @@ import { Component, OnInit, ElementRef, Input } from '@angular/core';
 })
 export class PageComponent implements OnInit {
   @Input() props: any;
+
   constructor(
     public ele: ElementRef
   ) { }
 
-  ngOnInit() {
-    console.log(this.props);
-  }
+  ngOnInit() {}
 
 }

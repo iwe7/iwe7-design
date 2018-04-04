@@ -78,3 +78,16 @@ imports: [
 
 ## 总结
 > 大NG实在强大, 一起来完善这个组件库吧！我最近会把微信小程序的一些组件加进来，欢迎关注！
+
+
+
+- some-plugin
+  - template
+    - web 后端
+    - app 前端h5
+    - wechat 微信端
+    - wxapp 小程序
+  - serve
+    - src
+    - main.js
+  - package.json

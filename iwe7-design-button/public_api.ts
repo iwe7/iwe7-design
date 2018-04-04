@@ -14,11 +14,10 @@ export const component = {
     class: {
       [`iwe7-design-button`]: true,
       [`weui-btn`]: true,
-      [`weui-btn_primary`]: true
+      [`weui-btn_primary`]: true,
+      [`weui-btn_mini`]: false
     },
-    style: {
-      display: "block"
-    },
+    style: {},
     props: []
   }
 };
