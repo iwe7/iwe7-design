@@ -4,7 +4,7 @@ import { InputSettingComponent } from "./input-setting/input-setting.component";
 export const component = {
   title: "输入框",
   name: "input",
-  show: true,
+  show: false,
   setting: InputSettingComponent,
   preview: InputComponent,
   props: {

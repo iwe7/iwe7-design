@@ -4,7 +4,7 @@ import { CheckboxGroupSettingComponent } from "./checkbox-group-setting/checkbox
 export const component = {
   title: "多项选择器",
   name: "checkbox-group",
-  show: true,
+  show: false,
   setting: CheckboxGroupSettingComponent,
   preview: CheckboxGroupComponent,
   props: {

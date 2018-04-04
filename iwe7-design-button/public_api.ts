@@ -4,7 +4,7 @@ import { ButtonSettingComponent } from "./button-setting/button-setting.componen
 export const component = {
   title: "按钮",
   name: "button",
-  show: true,
+  show: false,
   setting: ButtonSettingComponent,
   preview: ButtonComponent,
   props: {

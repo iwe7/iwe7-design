@@ -32,9 +32,16 @@ import { component as ButtonCom } from "./iwe7-design-button/public_api";
 import { component as CheckboxCom } from "./checkbox/public_api";
 import { component as CheckboxGroupCom } from "./checkbox-group/public_api";
 import { component as InputCom } from "./iwe7-design-input/public_api";
+import { component as SwitchCom } from "./iwe7-design-switch/public_api";
+import { component as TextareaCom } from "./iwe7-design-textarea/public_api";
+import { component as FormCom } from "./iwe7-design-form/public_api";
+
 import { SwitchComponent } from "./iwe7-design-switch/switch/switch.component";
 import { SwitchSettingComponent } from "./iwe7-design-switch/switch-setting/switch-setting.component";
-import { component as SwitchCom } from "./iwe7-design-switch/public_api";
+import { TextareaComponent } from "./iwe7-design-textarea/textarea/textarea.component";
+import { TextareaSettingComponent } from "./iwe7-design-textarea/textarea-setting/textarea-setting.component";
+import { FormComponent } from './iwe7-design-form/form/form.component';
+import { FormSettingComponent } from './iwe7-design-form/form-setting/form-setting.component';
 
 export const emtryComponents = [
   TextComponent,
@@ -50,7 +57,11 @@ export const emtryComponents = [
   InputComponent,
   InputSettingComponent,
   SwitchComponent,
-  SwitchSettingComponent
+  SwitchSettingComponent,
+  TextareaComponent,
+  TextareaSettingComponent,
+  FormComponent,
+    FormSettingComponent
 ];
 
 @NgModule({
@@ -68,7 +79,11 @@ export const emtryComponents = [
     InputComponent,
     InputSettingComponent,
     SwitchComponent,
-    SwitchSettingComponent
+    SwitchSettingComponent,
+    TextareaComponent,
+    TextareaSettingComponent,
+    FormComponent,
+    FormSettingComponent
   ],
   exports: [Iwe7DesignDirective, DesignLayoutComponent],
   entryComponents: [...emtryComponents]
@@ -90,7 +105,9 @@ export class Iwe7DesignModule {
               [`checkbox-group`]: CheckboxGroupCom,
               checkbox: CheckboxCom,
               input: InputCom,
-              switch: SwitchCom
+              switch: SwitchCom,
+              textarea: TextareaCom,
+              form: FormCom
             }
           ],
           multi: true

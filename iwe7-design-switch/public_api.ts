@@ -4,7 +4,7 @@ import { SwitchSettingComponent } from "./switch-setting/switch-setting.componen
 export const component = {
   title: "开关选择器",
   name: "switch",
-  show: true,
+  show: false,
   setting: SwitchSettingComponent,
   preview: SwitchComponent,
   props: {
