@@ -129,7 +129,9 @@ export class Iwe7DesignDirective implements OnChanges {
 
   private setDrop(instance: any) {
     const ele = instance.ele.nativeElement;
-    fromEvent(ele, "drop").subscribe((ev: DragEvent) => {});
+    fromEvent(ele, "drop").subscribe((ev: DragEvent) => {
+
+    });
   }
 
   private etAttribute(classObj: { [key: string]: any }, ele?: HTMLElement) {
