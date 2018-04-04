@@ -13,6 +13,7 @@ export const component = {
     type: "text",
     password: false,
     placeholder: "请输入文本",
+    label: "标题",
     disabled: false,
     class: {
       [`iwe7-design-input`]: true

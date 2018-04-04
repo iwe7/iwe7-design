@@ -32,6 +32,9 @@ import { component as ButtonCom } from "./iwe7-design-button/public_api";
 import { component as CheckboxCom } from "./checkbox/public_api";
 import { component as CheckboxGroupCom } from "./checkbox-group/public_api";
 import { component as InputCom } from "./iwe7-design-input/public_api";
+import { SwitchComponent } from "./iwe7-design-switch/switch/switch.component";
+import { SwitchSettingComponent } from "./iwe7-design-switch/switch-setting/switch-setting.component";
+import { component as SwitchCom } from "./iwe7-design-switch/public_api";
 
 export const emtryComponents = [
   TextComponent,
@@ -45,7 +48,9 @@ export const emtryComponents = [
   CheckboxComponent,
   CheckboxSettingComponent,
   InputComponent,
-  InputSettingComponent
+  InputSettingComponent,
+  SwitchComponent,
+  SwitchSettingComponent
 ];
 
 @NgModule({
@@ -61,7 +66,9 @@ export const emtryComponents = [
     CheckboxComponent,
     CheckboxSettingComponent,
     InputComponent,
-    InputSettingComponent
+    InputSettingComponent,
+    SwitchComponent,
+    SwitchSettingComponent
   ],
   exports: [Iwe7DesignDirective, DesignLayoutComponent],
   entryComponents: [...emtryComponents]
@@ -82,7 +89,8 @@ export class Iwe7DesignModule {
               button: ButtonCom,
               [`checkbox-group`]: CheckboxGroupCom,
               checkbox: CheckboxCom,
-              input: InputCom
+              input: InputCom,
+              switch: SwitchCom
             }
           ],
           multi: true
