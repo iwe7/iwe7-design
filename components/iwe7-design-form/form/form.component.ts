@@ -10,7 +10,7 @@ import {
   Iwe7DesignComponent
 } from "../../interface";
 @Component({
-  selector: 'form',
+  selector: 'iwe7-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })

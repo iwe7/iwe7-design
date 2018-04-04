@@ -5,7 +5,7 @@ export class Iwe7DesignAddonService {
   // 我的应用
   app: any = {
     // 分享设置
-    name: "我的应用",
+    name: "日天日地日空气",
     share: {},
     // 具体内容 模块列表
     menu: {

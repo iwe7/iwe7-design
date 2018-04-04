@@ -13,13 +13,15 @@ export class Iwe7DesignBase {
   constructor(public ele: ElementRef, public render: Renderer2) {}
   public setClass() {
     let ele = this.ele.nativeElement;
-    _.map(this.props.class, (s, key) => {
-      if (this.isTrue(s)) {
-        this.render.addClass(ele, "" + key);
-      } else {
-        this.render.removeClass(ele, "" + key);
-      }
-    });
+    if (this.props && this.props.class) {
+      _.map(this.props.class, (s, key) => {
+        if (this.isTrue(s)) {
+          this.render.addClass(ele, "" + key);
+        } else {
+          this.render.removeClass(ele, "" + key);
+        }
+      });
+    }
   }
 
   public isTrue(val: any) {

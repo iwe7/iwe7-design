@@ -12,15 +12,54 @@ import {
 } from "./iwe7-design-library.service";
 
 import { emtryComponents, Libs } from "./components/public_api";
+import { RouterModule } from "@angular/router";
+
+import { DesignPage } from "./pages/design/design.component";
+import { AddonsPage } from "./pages/addons/addons.component";
+import { TemplatePage } from "./pages/template/template.component";
+import { ComponentsPage } from "./pages/components/components.component";
+import { ResourcePage } from "./pages/resource/resource.component";
 
 @NgModule({
-  imports: [CommonModule, UnderscoreModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    UnderscoreModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forChild([
+      {
+        path: "",
+        component: DesignPage
+      },
+      {
+        path: "addons",
+        component: AddonsPage
+      },
+      {
+        path: "template",
+        component: TemplatePage
+      },
+      {
+        path: "components",
+        component: ComponentsPage
+      },
+      {
+        path: "resource",
+        component: ResourcePage
+      }
+    ])
+  ],
   declarations: [
     Iwe7DesignDirective,
     DesignLayoutComponent,
-    ...emtryComponents
+    DesignPage,
+    ...emtryComponents,
+    AddonsPage,
+    TemplatePage,
+    ComponentsPage,
+    ResourcePage
   ],
-  exports: [Iwe7DesignDirective, DesignLayoutComponent],
+  exports: [Iwe7DesignDirective, DesignLayoutComponent, RouterModule],
   entryComponents: [...emtryComponents]
 })
 export class Iwe7DesignModule {
@@ -32,9 +71,7 @@ export class Iwe7DesignModule {
         Iwe7DesignLibraryService,
         {
           provide: DESIGN_LIBRARYS,
-          useValue: [
-            Libs
-          ],
+          useValue: [Libs],
           multi: true
         },
         {

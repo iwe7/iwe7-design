@@ -4,7 +4,7 @@ import {
   Iwe7DesignComponent
 } from "../../interface";
 @Component({
-  selector: "button",
+  selector: "iwe7-button",
   templateUrl: "./button.component.html",
   styleUrls: ["./button.component.scss"]
 })
