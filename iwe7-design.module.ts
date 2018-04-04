@@ -37,6 +37,9 @@ import { component as TextareaCom } from "./iwe7-design-textarea/public_api";
 import { component as FormCom } from "./iwe7-design-form/public_api";
 import { component as AudioCom } from "./iwe7-design-audio/public_api";
 import { component as ImageCom } from "./iwe7-design-image/public_api";
+import { component as VideoCom } from "./iwe7-design-video/public_api";
+import { component as MapCom } from "./iwe7-design-map/public_api";
+import { component as IconCom } from "./iwe7-design-icon/public_api";
 
 import { SwitchComponent } from "./iwe7-design-switch/switch/switch.component";
 import { SwitchSettingComponent } from "./iwe7-design-switch/switch-setting/switch-setting.component";
@@ -48,6 +51,12 @@ import { AudioComponent } from "./iwe7-design-audio/audio/audio.component";
 import { AudioSettingComponent } from "./iwe7-design-audio/audio-setting/audio-setting.component";
 import { ImageComponent } from "./iwe7-design-image/image/image.component";
 import { ImageSettingComponent } from "./iwe7-design-image/image-setting/image-setting.component";
+import { VideoComponent } from "./iwe7-design-video/video/video.component";
+import { VideoSettingComponent } from "./iwe7-design-video/video-setting/video-setting.component";
+import { MapComponent } from "./iwe7-design-map/map/map.component";
+import { MapSettingComponent } from "./iwe7-design-map/map-setting/map-setting.component";
+import { IconComponent } from "./iwe7-design-icon/icon/icon.component";
+import { IconSettingComponent } from "./iwe7-design-icon/icon-setting/icon-setting.component";
 
 export const emtryComponents = [
   TextComponent,
@@ -71,7 +80,13 @@ export const emtryComponents = [
   AudioComponent,
   AudioSettingComponent,
   ImageComponent,
-  ImageSettingComponent
+  ImageSettingComponent,
+  VideoComponent,
+  VideoSettingComponent,
+  MapComponent,
+  MapSettingComponent,
+  IconComponent,
+  IconSettingComponent
 ];
 
 @NgModule({
@@ -105,7 +120,10 @@ export class Iwe7DesignModule {
               textarea: TextareaCom,
               form: FormCom,
               audio: AudioCom,
-              image: ImageCom
+              image: ImageCom,
+              video: VideoCom,
+              map: MapCom,
+              icon: IconCom
             }
           ],
           multi: true
