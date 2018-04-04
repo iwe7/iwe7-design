@@ -19,6 +19,9 @@ import { AddonsPage } from "./pages/addons/addons.component";
 import { TemplatePage } from "./pages/template/template.component";
 import { ComponentsPage } from "./pages/components/components.component";
 import { ResourcePage } from "./pages/resource/resource.component";
+import { RoutingPage } from "./pages/routing/routing.component";
+import { DatabasePage } from "./pages/database/database.component";
+import { HomePage } from "./pages/home/home.component";
 
 @NgModule({
   imports: [
@@ -29,23 +32,37 @@ import { ResourcePage } from "./pages/resource/resource.component";
     RouterModule.forChild([
       {
         path: "",
-        component: DesignPage
-      },
-      {
-        path: "addons",
-        component: AddonsPage
-      },
-      {
-        path: "template",
-        component: TemplatePage
-      },
-      {
-        path: "components",
-        component: ComponentsPage
-      },
-      {
-        path: "resource",
-        component: ResourcePage
+        component: RoutingPage,
+        children: [
+          {
+            path: "",
+            component: DesignPage
+          },
+          {
+            path: "addons",
+            component: AddonsPage
+          },
+          {
+            path: "template",
+            component: TemplatePage
+          },
+          {
+            path: "components",
+            component: ComponentsPage
+          },
+          {
+            path: "resource",
+            component: ResourcePage
+          },
+          {
+            path: "database",
+            component: DatabasePage
+          },
+          {
+            path: "home",
+            component: HomePage
+          }
+        ]
       }
     ])
   ],
@@ -57,7 +74,10 @@ import { ResourcePage } from "./pages/resource/resource.component";
     AddonsPage,
     TemplatePage,
     ComponentsPage,
-    ResourcePage
+    ResourcePage,
+    RoutingPage,
+    DatabasePage,
+    HomePage
   ],
   exports: [Iwe7DesignDirective, DesignLayoutComponent, RouterModule],
   entryComponents: [...emtryComponents]
