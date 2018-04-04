@@ -1,4 +1,4 @@
-export { Iwe7DesignComponent, Iwe7DesignSettingComponent, Iwe7Design, Iwe7DesignConfig } from "./interface";
+export { Iwe7DesignComponent, Iwe7DesignSettingComponent, Iwe7Design, Iwe7DesignConfig } from "./components/interface";
 export { Iwe7DesignModule } from "./iwe7-design.module";
 export {
   Iwe7DesignLibraryService,
