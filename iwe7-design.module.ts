@@ -40,6 +40,11 @@ import { component as ImageCom } from "./iwe7-design-image/public_api";
 import { component as VideoCom } from "./iwe7-design-video/public_api";
 import { component as MapCom } from "./iwe7-design-map/public_api";
 import { component as IconCom } from "./iwe7-design-icon/public_api";
+import { component as ViewCom } from "./iwe7-design-view/public_api";
+import { component as ScrollViewCom } from "./iwe7-design-scroll-view/public_api";
+import { component as MovableViewCom } from "./iwe7-design-movable-view/public_api";
+import { component as CoverViewCom } from "./iwe7-design-cover-view/public_api";
+
 
 import { SwitchComponent } from "./iwe7-design-switch/switch/switch.component";
 import { SwitchSettingComponent } from "./iwe7-design-switch/switch-setting/switch-setting.component";
@@ -57,6 +62,14 @@ import { MapComponent } from "./iwe7-design-map/map/map.component";
 import { MapSettingComponent } from "./iwe7-design-map/map-setting/map-setting.component";
 import { IconComponent } from "./iwe7-design-icon/icon/icon.component";
 import { IconSettingComponent } from "./iwe7-design-icon/icon-setting/icon-setting.component";
+import { ViewComponent } from "./iwe7-design-view/view/view.component";
+import { ViewSettingComponent } from "./iwe7-design-view/view-setting/view-setting.component";
+import { ScrollViewComponent } from "./iwe7-design-scroll-view/scroll-view/scroll-view.component";
+import { ScrollViewSettingComponent } from "./iwe7-design-scroll-view/scroll-view-setting/scroll-view-setting.component";
+import { MovableViewComponent } from "./iwe7-design-movable-view/movable-view/movable-view.component";
+import { MovableViewSettingComponent } from "./iwe7-design-movable-view/movable-view-setting/movable-view-setting.component";
+import { CoverViewComponent } from "./iwe7-design-cover-view/cover-view/cover-view.component";
+import { CoverViewSettingComponent } from "./iwe7-design-cover-view/cover-view-setting/cover-view-setting.component";
 
 export const emtryComponents = [
   TextComponent,
@@ -86,7 +99,15 @@ export const emtryComponents = [
   MapComponent,
   MapSettingComponent,
   IconComponent,
-  IconSettingComponent
+  IconSettingComponent,
+  ViewComponent,
+  ViewSettingComponent,
+  ScrollViewComponent,
+  ScrollViewSettingComponent,
+  MovableViewComponent,
+  MovableViewSettingComponent,
+  CoverViewComponent,
+  CoverViewSettingComponent
 ];
 
 @NgModule({
@@ -123,7 +144,11 @@ export class Iwe7DesignModule {
               image: ImageCom,
               video: VideoCom,
               map: MapCom,
-              icon: IconCom
+              icon: IconCom,
+              view: ViewCom,
+              ['scroll-view']: ScrollViewCom,
+              [`movable-view`]: MovableViewCom,
+              [`cover-view`]: CoverViewCom
             }
           ],
           multi: true
