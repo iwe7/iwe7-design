@@ -82,12 +82,6 @@ export class Iwe7DesignDirective implements OnChanges {
     // 新建一个实例
     (<any>instance).props = this.design;
 
-    if (this.designDrag) {
-      this.setDrag(instance);
-    }
-    if (this.designDrop) {
-      this.setDrop(instance);
-    }
     if (this.lib.uuid) {
       (<any>instance).props.id = this.lib.uuid;
       (<any>instance).props = instanceMap.get(this.lib.uuid).props;
@@ -96,8 +90,17 @@ export class Iwe7DesignDirective implements OnChanges {
       this.lib.uuid = (<any>instance).props.id = new Date().getTime();
       instanceMap.set(this.lib.uuid, instance);
     }
-    this.setClass((<any>instance).ele.nativeElement);
-    this.setStyle((<any>instance).ele.nativeElement);
+    if (!this.designSetting) {
+      this.setClass((<any>instance).ele.nativeElement);
+      this.setStyle((<any>instance).ele.nativeElement);
+
+      if (this.designDrag) {
+        this.setDrag(instance);
+      }
+      if (this.designDrop) {
+        this.setDrop(instance);
+      }
+    }
   }
 
   private setClass(ele: any) {
