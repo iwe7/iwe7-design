@@ -23,11 +23,15 @@ import { CheckboxGroupSettingComponent } from "./checkbox-group/checkbox-group-s
 import { CheckboxComponent } from "./checkbox/checkbox/checkbox.component";
 import { CheckboxSettingComponent } from "./checkbox/checkbox-setting/checkbox-setting.component";
 
+import { InputComponent } from "./iwe7-design-input/input/input.component";
+import { InputSettingComponent } from "./iwe7-design-input/input-setting/input-setting.component";
+
 import { component as TextCom } from "./iwe7-design-text/public_api";
 import { component as PageCom } from "./iwe7-design-page/public_api";
 import { component as ButtonCom } from "./iwe7-design-button/public_api";
 import { component as CheckboxCom } from "./checkbox/public_api";
 import { component as CheckboxGroupCom } from "./checkbox-group/public_api";
+import { component as InputCom } from "./iwe7-design-input/public_api";
 
 export const emtryComponents = [
   TextComponent,
@@ -39,7 +43,9 @@ export const emtryComponents = [
   CheckboxGroupComponent,
   CheckboxGroupSettingComponent,
   CheckboxComponent,
-  CheckboxSettingComponent
+  CheckboxSettingComponent,
+  InputComponent,
+  InputSettingComponent
 ];
 
 @NgModule({
@@ -53,7 +59,9 @@ export const emtryComponents = [
     CheckboxGroupComponent,
     CheckboxGroupSettingComponent,
     CheckboxComponent,
-    CheckboxSettingComponent
+    CheckboxSettingComponent,
+    InputComponent,
+    InputSettingComponent
   ],
   exports: [Iwe7DesignDirective, DesignLayoutComponent],
   entryComponents: [...emtryComponents]
@@ -73,7 +81,8 @@ export class Iwe7DesignModule {
               text: TextCom,
               button: ButtonCom,
               [`checkbox-group`]: CheckboxGroupCom,
-              checkbox: CheckboxCom
+              checkbox: CheckboxCom,
+              input: InputCom
             }
           ],
           multi: true
