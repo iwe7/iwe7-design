@@ -35,13 +35,19 @@ import { component as InputCom } from "./iwe7-design-input/public_api";
 import { component as SwitchCom } from "./iwe7-design-switch/public_api";
 import { component as TextareaCom } from "./iwe7-design-textarea/public_api";
 import { component as FormCom } from "./iwe7-design-form/public_api";
+import { component as AudioCom } from "./iwe7-design-audio/public_api";
+import { component as ImageCom } from "./iwe7-design-image/public_api";
 
 import { SwitchComponent } from "./iwe7-design-switch/switch/switch.component";
 import { SwitchSettingComponent } from "./iwe7-design-switch/switch-setting/switch-setting.component";
 import { TextareaComponent } from "./iwe7-design-textarea/textarea/textarea.component";
 import { TextareaSettingComponent } from "./iwe7-design-textarea/textarea-setting/textarea-setting.component";
-import { FormComponent } from './iwe7-design-form/form/form.component';
-import { FormSettingComponent } from './iwe7-design-form/form-setting/form-setting.component';
+import { FormComponent } from "./iwe7-design-form/form/form.component";
+import { FormSettingComponent } from "./iwe7-design-form/form-setting/form-setting.component";
+import { AudioComponent } from "./iwe7-design-audio/audio/audio.component";
+import { AudioSettingComponent } from "./iwe7-design-audio/audio-setting/audio-setting.component";
+import { ImageComponent } from "./iwe7-design-image/image/image.component";
+import { ImageSettingComponent } from "./iwe7-design-image/image-setting/image-setting.component";
 
 export const emtryComponents = [
   TextComponent,
@@ -61,7 +67,11 @@ export const emtryComponents = [
   TextareaComponent,
   TextareaSettingComponent,
   FormComponent,
-    FormSettingComponent
+  FormSettingComponent,
+  AudioComponent,
+  AudioSettingComponent,
+  ImageComponent,
+  ImageSettingComponent
 ];
 
 @NgModule({
@@ -69,21 +79,7 @@ export const emtryComponents = [
   declarations: [
     Iwe7DesignDirective,
     DesignLayoutComponent,
-    ...emtryComponents,
-    ButtonComponent,
-    ButtonSettingComponent,
-    CheckboxGroupComponent,
-    CheckboxGroupSettingComponent,
-    CheckboxComponent,
-    CheckboxSettingComponent,
-    InputComponent,
-    InputSettingComponent,
-    SwitchComponent,
-    SwitchSettingComponent,
-    TextareaComponent,
-    TextareaSettingComponent,
-    FormComponent,
-    FormSettingComponent
+    ...emtryComponents
   ],
   exports: [Iwe7DesignDirective, DesignLayoutComponent],
   entryComponents: [...emtryComponents]
@@ -107,7 +103,9 @@ export class Iwe7DesignModule {
               input: InputCom,
               switch: SwitchCom,
               textarea: TextareaCom,
-              form: FormCom
+              form: FormCom,
+              audio: AudioCom,
+              image: ImageCom
             }
           ],
           multi: true
